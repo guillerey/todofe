@@ -34,20 +34,20 @@ const Todo = ({
   return todos.map((todo, index) => (
     // <div>
     <div
-      className={todo.isComplete ? "todo-row complete" : "todo-row"}
+      className={todo.is_done === 1 ? "todo-row complete" : "todo-row"}
       key={index}
     >
       <div className="description">
         <div
           key={todo.id}
-          onClick={() => completeTodo(todo.id)}
+          onClick={() => completeTodo(todo.id, todo.is_done)}
           className="todo"
         >
-          {todo.text}
+          {todo.title}
         </div>
         <div className="icons">
           <RiCheckboxCircleLine
-            onClick={() => completeTodo(todo.id)}
+            onClick={() => completeTodo(todo.id, todo.is_done)}
             className="delete-icon"
           />
           <RiArrowDownCircleLine
@@ -62,7 +62,7 @@ const Todo = ({
             onClick={() =>
               setEdit({
                 id: todo.id,
-                value: todo.text,
+                value: todo.title,
                 description: todo.description,
               })
             }
@@ -71,7 +71,9 @@ const Todo = ({
         </div>
       </div>
       {todo.showDescription && (
-        <div onClick={() => completeTodo(todo.id)} className="description">
+        <div 
+        onClick={() => completeTodo(todo.id, todo.is_done)} 
+        className="description">
           Description: {todo.description}
         </div>
       )}
