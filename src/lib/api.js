@@ -4,7 +4,7 @@ export async function getTodos() {
   try {
     const {
       data: { todos },
-    } = await axios.get("http://localhost:3000/v1/to-dos");
+    } = await axios.get("https://todo-project-be-corecode.onrender.com");
     return todos;
   } catch (_error) {
     return [];
@@ -14,7 +14,7 @@ export async function getTodos() {
 export async function updateTodoData(todoId, todoData) {
   try {
     console.log("HERE", todoData);
-    await axios.patch(`http://localhost:3000/v1/to-dos/${todoId}`, {
+    await axios.patch(`https://todo-project-be-corecode.onrender.com/${todoId}`, {
       ...todoData,
     });
   } catch ({ response }) {
