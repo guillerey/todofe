@@ -19,7 +19,7 @@ function TodoList() {
       return;
     };
 
-  axios.post("http://localhost:3000/v1/to-dos", { ...todo }).then (() => {
+  axios.post("http://todo-project-be-corecode.onrender.com/v1/to-dos", { ...todo }).then (() => {
     getTodos()
     .then((todos) => setTodos(todos))
     .catch((error) => alert(error.message));
@@ -51,7 +51,7 @@ function TodoList() {
     };
 
   const removeTodo = (id) => {
-    axios.delete(`http://localhost:3000/v1/to-dos/${id}`).then (() => {
+    axios.delete(`http://todo-project-be-corecode.onrender.com/v1/to-dos/${id}`).then (() => {
       getTodos()
         .then((todos) => setTodos(todos))
         .catch((error) => alert(error.message));
