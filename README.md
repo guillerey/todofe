@@ -1,6 +1,6 @@
 
-# Proyecto Final To Do's App del Bootcamp de CoreCode
-  Deploy del frontend en Netlify, y el backend en Render
+# To-Do's App Final Project CoreCode Bootcamp
+  Frontend deployin on Netlify and Backend on Render
   
   https://todo-project-corecode.netlify.app/
   
